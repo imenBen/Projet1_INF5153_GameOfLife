@@ -1,4 +1,4 @@
-package gameOfLife;
+package uqam.inf5153.game;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -41,6 +41,11 @@ public class GameOfLife {
 			grid[row][column] = LIVING_CELL;
 		}
 	}
+	//ajouter une cellule vivante dans un endroit donné
+	 public void setLivingCell(int row, int column) {
+	        grid[row][column] = LIVING_CELL;
+	    }
+
 
 	public int countlivingNeighbours(int row, int column) {
 

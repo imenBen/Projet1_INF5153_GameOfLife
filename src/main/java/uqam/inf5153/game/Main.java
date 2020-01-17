@@ -1,6 +1,4 @@
-package client;
-
-import gameOfLife.GameOfLife;
+package uqam.inf5153.game;
 
 /**
  * Crée par Imen Benzarti le 13/01/2020

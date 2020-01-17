@@ -22,7 +22,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>Main</mainClass>
+          <mainClass>uqam.inf5153.game.Main</mainClass>
           
         </configuration>
       </plugin>
