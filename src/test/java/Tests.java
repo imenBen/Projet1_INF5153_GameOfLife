@@ -5,7 +5,8 @@ import uqam.inf5153.game.GameOfLife;
 
 import java.util.Arrays;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by fabricejeannet on 16/09/2014.
@@ -23,7 +24,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(0);
+        assertEquals(neighboursCount, 0);
     }
 
     @Test
@@ -33,7 +34,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(1);
+        assertEquals(neighboursCount, 1);
     }
 
 
@@ -45,7 +46,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(2);
+        assertEquals(neighboursCount, 2);
     }
 
 
@@ -58,7 +59,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(3);
+        assertEquals(neighboursCount, 3);
     }
 
     @Test
@@ -71,7 +72,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(4);
+        assertEquals(neighboursCount, 4);
     }
 
     @Test
@@ -85,7 +86,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(5);
+        assertEquals(neighboursCount, 5);
     }
 
     @Test
@@ -100,7 +101,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(6);
+        assertEquals(neighboursCount, 6);
     }
 
 
@@ -117,7 +118,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
 
-        assertThat(neighboursCount).isEqualTo(7);
+        assertEquals(neighboursCount, 7);
     }
 
     @Test
@@ -133,8 +134,8 @@ public class Tests {
         gameOfLife.setLivingCell(1, 3);
 
         int neighboursCount = gameOfLife.countlivingNeighbours(1, 4);
-
-        assertThat(neighboursCount).isEqualTo(8);
+        
+        assertEquals(neighboursCount, 8);
     }
 
     @Test
@@ -146,7 +147,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(0, 0);
 
-        assertThat(neighboursCount).isEqualTo(3);
+        assertEquals(neighboursCount, 3);
     }
 
     @Test
@@ -158,7 +159,7 @@ public class Tests {
 
         int neighboursCount = gameOfLife.countlivingNeighbours(3, 7);
 
-        assertThat(neighboursCount).isEqualTo(3);
+        assertEquals(neighboursCount, 3);
     }
 
     @Test
@@ -169,7 +170,7 @@ public class Tests {
 
         gameOfLife.computeNextGeneration();
 
-        assertThat(gameOfLife.isDead(0,0)).isTrue();
+        assertTrue(gameOfLife.isDead(0,0));
     }
 
 
@@ -182,7 +183,7 @@ public class Tests {
 
         gameOfLife.computeNextGeneration();
 
-        assertThat(gameOfLife.isAlive(0,0)).isTrue();
+        assertTrue(gameOfLife.isAlive(0,0));
     }
 
 
@@ -197,7 +198,7 @@ public class Tests {
 
         gameOfLife.computeNextGeneration();
 
-        assertThat(gameOfLife.isDead(1,4)).isTrue();
+        assertTrue(gameOfLife.isDead(1,4));
 
     }
 
@@ -211,7 +212,7 @@ public class Tests {
 
         gameOfLife.computeNextGeneration();
 
-        assertThat(gameOfLife.isAlive(1,4)).isTrue();
+        assertTrue(gameOfLife.isAlive(1,4));
 
     }
 
@@ -231,7 +232,7 @@ public class Tests {
                 {GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL, GameOfLife.DEAD_CELL}
         };
 
-       assertThat(Arrays.deepEquals(gameOfLife.grid, expectedGrid)).isTrue();
+        assertTrue(Arrays.deepEquals(gameOfLife.grid, expectedGrid));
     }
 
     private GameOfLife gameOfLife;
